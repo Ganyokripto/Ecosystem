@@ -5,137 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meta Whale Ecosystem | Powered by GanyoKripto</title>
     
-    <!-- FIXED ICON LINK -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --bg-dark: #0a0b10;
-            --card-bg: #161b22;
-            --primary: #00d4ff; 
-            --accent: #ffcc00;  
-            --text-main: #e6edf3;
+            --gold: #d4af37;     /* Premium Gold */
+            --yellow: #ffcc00;   /* Bright Yellow */
+            --bg-light: #ffffff; /* Clean White */
+            --text-dark: #1a1a1a;
+            --card-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
-        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.6; }
+        body { 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
+            background: #fafafa; 
+            color: var(--text-dark); 
+            margin: 0; 
+            line-height: 1.6; 
+        }
         
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #30363d; background: rgba(10, 11, 16, 0.95); position: sticky; top: 0; z-index: 1000; }
-        .brand { font-size: 1.5rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .brand span { color: var(--accent); }
+        /* Clean Gold/White Header */
+        header { 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid var(--gold); 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .brand { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
+        .brand span { color: var(--gold); }
 
-        .hero { padding: 80px 5%; text-align: center; background: radial-gradient(circle at top, #1d212b 0%, #0a0b10 100%); }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; color: #fff; }
-        .hero p { max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #8b949e; }
-        .badge { background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+        /* Market Update Section */
+        .market-section {
+            background: #fff; 
+            padding: 1.5rem; 
+            border-radius: 24px; 
+            margin: 20px 5%; 
+            border: 1px solid var(--gold); 
+            text-align: center; 
+            box-shadow: var(--card-shadow);
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 5%; }
-        .card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 16px; padding: 25px; transition: 0.3s; position: relative; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .card h3 { margin: 10px 0; color: var(--accent); }
-        .card p { font-size: 0.9rem; color: #8b949e; }
+        /* Services Grid */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 5%; }
+        .card { 
+            background: #fff; 
+            padding: 40px 20px; 
+            border-radius: 24px; 
+            text-align: center; 
+            box-shadow: var(--card-shadow); 
+            border-top: 5px solid var(--gold); 
+            transition: 0.3s ease; 
+        }
+        .card:hover { transform: translateY(-10px); border-top-color: var(--yellow); }
+        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .card h3 { color: var(--text-dark); font-size: 1.4rem; margin-bottom: 20px; }
+        
+        .serv-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background: var(--text-dark); 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            transition: 0.3s; 
+        }
+        .serv-btn:hover { background: var(--gold); color: #fff; }
 
-        .cta-box { background: linear-gradient(135deg, #00d4ff 0%, #0055ff 100%); color: #fff; margin: 40px 5%; padding: 40px; border-radius: 24px; text-align: center; }
-        .cta-btn { background: #fff; color: #0055ff; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        /* V-BOOST Luxury Box */
+        .vboost-box { 
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); 
+            color: var(--gold); 
+            padding: 50px 20px; 
+            border-radius: 30px; 
+            margin: 40px 5%; 
+            text-align: center; 
+            border: 2px solid var(--gold);
+        }
+        #timer { 
+            font-family: 'Courier New', monospace; 
+            font-size: 3rem; 
+            font-weight: bold; 
+            color: #fff; 
+            text-shadow: 0 0 10px var(--gold);
+            margin-top: 15px;
+        }
 
-        footer { text-align: center; padding: 40px; color: #484f58; border-top: 1px solid #30363d; }
+        /* Quiz & Insights Section */
+        .white-section {
+            background: #fff; 
+            padding: 2.5rem; 
+            border-radius: 24px; 
+            margin: 20px 5%; 
+            border-left: 8px solid var(--gold); 
+            box-shadow: var(--card-shadow);
+        }
+        .quiz-container { text-align: center; border: 1px solid #eee; border-top: 5px solid var(--gold); }
+        #qOptions button { 
+            display: block; width: 100%; max-width: 450px; margin: 12px auto; 
+            padding: 15px; border: 1px solid #eee; border-radius: 12px; 
+            background: #fff; cursor: pointer; font-weight: 600; transition: 0.2s; 
+        }
+        #qOptions button:hover { background: #fff8e1; border-color: var(--gold); color: var(--gold); }
+
+        footer { 
+            background: #fff; 
+            padding: 50px; 
+            text-align: center; 
+            border-top: 1px solid #eee; 
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <!-- FIXED WHALE ICON -->
-    <div class="brand"><i class="fa-solid fa-fish-symbol"></i> META <span>WHALE</span></div>
-    <div style="font-size: 0.8rem; font-weight: bold;">Ecosystem v1.0</div>
+    <div class="brand"><i class="fa-solid fa-whale"></i> META <span>WHALE</span></div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">ECOSYSTEM V1.0</div>
 </header>
 
-    <!-- STYLIZED COINGECKO WIDGET -->
-<section style="background: #fff; padding: 1.5rem; border-radius: 20px; margin: 15px 5%; color: #333; border: 2px solid var(--accent); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-    
-    <h2 style="color: var(--primary); margin-top: 0; font-size: 1.3rem; margin-bottom: 15px;">📈 Market Update</h2>
-    
-    <div style="display: flex; justify-content: center; align-items: center; min-height: 100px;">
+<!-- MARKET UPDATE -->
+<section class="market-section">
+    <h2 style="color: var(--text-dark); font-size: 1.4rem; margin-bottom: 20px;">
+        <i class="fa-solid fa-chart-line" style="color: var(--gold);"></i> Market Pulse
+    </h2>
+    <div style="display: flex; justify-content: center; min-height: 100px;">
         <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
-        <gecko-coin-ticker-widget 
-            locale="en" 
-            outlined="true" 
-            coin-id="whalebit" 
-            initial-currency="usd">
-        </gecko-coin-ticker-widget>
+        <gecko-coin-ticker-widget locale="en" outlined="true" coin-id="whalebit" initial-currency="usd"></gecko-coin-ticker-widget>
     </div>
+</section>
 
-    <style>
-    /* Ecosystem Styles */
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 5%; }
-    .card { background: #fff; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-bottom: 4px solid var(--accent); transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { color: #333; margin: 15px 0; }
-    
-    .serv-btn { display: inline-block; padding: 12px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
-    .serv-btn:hover { background: #1e7e34; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3); }
-
-    /* V-BOOST Timer Box */
-    .vboost-box { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); color: white; padding: 40px 20px; border-radius: 20px; margin: 20px 5%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-    #timer { font-family: 'Courier New', monospace; font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; margin-top: 15px; color: var(--accent); }
-
-    /* Quiz Styling */
-    .quiz-container { background: #fff; padding: 2rem; border-radius: 20px; margin: 20px 5%; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 2px solid var(--accent); }
-    #qOptions button { display: block; width: 100%; max-width: 400px; margin: 10px auto; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; cursor: pointer; transition: 0.2s; }
-    #qOptions button:hover { background: #e8f5e9; border-color: var(--primary); }
-    .score-box { font-weight: bold; color: var(--primary); margin: 15px 0; }
-    .next-btn { background: #333; color: white; padding: 10px 30px; border: none; border-radius: 50px; cursor: pointer; }
-</style>
-
-<!-- 1. SERVICE CARDS -->
+<!-- SERVICE CARDS -->
 <div class="services">
     <div class="card">
-        <i class="fa fa-chart-line" style="font-size:2.5rem; color:var(--primary)"></i>
+        <i class="fa-solid fa-rocket"></i>
         <h3>DeFi Portal</h3>
-        <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="serv-btn">Enter Portal</a>
+        <p>Access high-yield strategies and decentralized finance tools.</p>
+        <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="serv-btn">Launch Portal</a>
     </div>
 
     <div class="card">
-        <i class="fa fa-graduation-cap" style="font-size:2.5rem; color:var(--primary)"></i>
+        <i class="fa-solid fa-university"></i>
         <h3>Academy</h3>
-        <a href="https://v-academy.top" target="_blank" class="serv-btn">Login Academy</a>
+        <p>Master the art of blockchain with exclusive training modules.</p>
+        <a href="https://v-academy.top" target="_blank" class="serv-btn">Enter Academy</a>
     </div>
 
     <div class="card">
-        <i class="fa fa-users" style="font-size:2.5rem; color:var(--primary)"></i>
+        <i class="fa-solid fa-crown"></i>
         <h3>Community</h3>
-        <a href="https://chat.whatsapp.com/Dmko91cY4OA93VfBfweaVf" target="_blank" class="serv-btn">Join WhatsApp</a>
+        <p>Network with top-tier crypto whales and industry experts.</p>
+        <a href="https://chat.whatsapp.com/Dmko91cY4OA93VfBfweaVf" target="_blank" class="serv-btn">Join Circle</a>
     </div>
 </div>
 
-<!-- 2. V-BOOST COUNTDOWN -->
+<!-- V-BOOST COUNTDOWN -->
 <div class="vboost-box">
-    <h3 style="margin:0; letter-spacing:1px;">🚀 V-BOOST LAUNCH COUNTDOWN</h3>
+    <h3 style="margin:0; letter-spacing:2px; text-transform: uppercase;">🚀 V-BOOST Launch Countdown</h3>
     <div id="timer">00:00:00:00</div>
+    <p style="color: #888; margin-top: 10px;">The revolution is arriving. Prepare for impact.</p>
 </div>
 
-<!-- 3. DAILY CRYPTO INSIGHT -->
-<section style="background: #fff; padding: 2rem 1.5rem; border-radius: 20px; margin: 20px 5%; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 6px solid var(--accent);">
-    <h3 style="color: var(--primary); margin-top: 0; font-size: 1.3rem;">🌟 Daily Crypto Insight</h3>
-    <div id="daily-quote" style="font-size: 1.1rem; font-weight: 600; color: #444; font-style: italic; margin: 15px 0; line-height: 1.4;">
-        "The best time to invest was yesterday. The second best time is now."
+<!-- DAILY INSIGHT -->
+<section class="white-section">
+    <h3 style="color: var(--gold); margin-top: 0;"><i class="fa-solid fa-lightbulb"></i> Daily Whale Wisdom</h3>
+    <div id="daily-quote" style="font-size: 1.2rem; font-weight: 500; font-style: italic; margin: 15px 0;">
+        "True wealth is created by holding during the storm, not just sailing in the sun."
     </div>
-    <div style="background: #f8f9fa; padding: 15px; border-radius: 12px; margin-top: 10px;">
-        <h4 style="color: var(--primary); margin: 0 0 5px 0; font-size: 1rem; text-transform: uppercase;">Why V-BOOST?</h4>
-        <p id="vboost-reason" style="font-size: 0.95rem; color: #555; margin: 0; line-height: 1.5;">
-            V-BOOST leverages smart-contract technology to amplify your networking rewards.
+    <div style="background: #fff8e1; padding: 20px; border-radius: 15px; border: 1px dashed var(--gold);">
+        <h4 style="color: var(--text-dark); margin: 0 0 5px 0; text-transform: uppercase; font-size: 0.9rem;">Why V-BOOST?</h4>
+        <p style="font-size: 0.95rem; color: #555; margin: 0;">
+            V-BOOST is a proprietary algorithm designed to maximize network leverage using automated smart contracts.
         </p>
     </div>
 </section>
 
-<!-- 4. QUIZ SECTION -->
-<section class="quiz-container">
-    <h3 style="color:var(--primary)">🧠 Crypto & DeFi IQ Quiz</h3>
-    <p id="qText" style="font-weight:bold; font-size:1.1rem; color:#444;">What does 'HODL' stand for?</p>
+<!-- QUIZ SECTION -->
+<section class="quiz-container white-section">
+    <h3 style="color:var(--text-dark)">🧠 Crypto IQ Challenge</h3>
+    <p id="qText" style="font-weight:bold; font-size:1.1rem; color:#555;">What is the primary benefit of DeFi?</p>
     <div id="qOptions">
-        <button>Hold On for Dear Life</button>
-        <button>Highly Optimized Digital Ledger</button>
+        <button>Eliminating Intermediaries (Banks)</button>
+        <button>Faster Printing of Physical Cash</button>
     </div>
-    <p id="qRes" style="font-weight:bold; height:20px; color:var(--primary);"></p>
-    <div class="score-box">Your Score: <span id="score">0</span></div>
-    <button class="next-btn" onclick="nextQ()">Next Question</button>
+    <div class="score-box" style="color: var(--gold); font-weight: bold; margin-top: 15px;">Success Rate: <span id="score">0</span>%</div>
+    <button class="serv-btn" style="margin-top: 20px; background: var(--gold);">Next Challenge</button>
 </section>
+
+<footer>
+    <div style="color: var(--text-dark); font-weight: bold; margin-bottom: 10px;">META WHALE</div>
+    GanyoData @2026 | Powered By <a href="#" style="color: var(--gold); text-decoration: none; font-weight: bold;">GanyoKripto</a>
+</footer>
+
+</body>
+</html>
