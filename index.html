@@ -3,124 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Whale Ecosystem | Powered by GanyoKripto</title>
+    <title>Meta Whale Ecosystem | Premium Crypto Portal</title>
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --gold: #d4af37;     /* Premium Gold */
-            --yellow: #ffcc00;   /* Bright Yellow */
-            --bg-light: #ffffff; /* Clean White */
-            --text-dark: #1a1a1a;
-            --card-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            --gold: #d4af37;     /* Luxury Gold */
+            --gold-light: #f4e4bc;
+            --charcoal: #121212; /* Deep Dark */
+            --white: #ffffff;
+            --gray-bg: #f8f9fa;
+            --shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
         }
 
         body { 
             font-family: 'Inter', 'Segoe UI', sans-serif; 
-            background: #fafafa; 
-            color: var(--text-dark); 
+            background: var(--gray-bg); 
+            color: var(--charcoal); 
             margin: 0; 
             line-height: 1.6; 
         }
-        
-        /* Clean Gold/White Header */
+
+        /* PREMIUM HEADER */
         header { 
             padding: 15px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            border-bottom: 2px solid var(--gold); 
-            background: #fff; 
+            background: var(--white); 
+            border-bottom: 3px solid var(--gold); 
             position: sticky; 
             top: 0; 
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .brand { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
+        .brand { font-size: 1.6rem; font-weight: 900; color: var(--charcoal); display: flex; align-items: center; gap: 10px; }
         .brand span { color: var(--gold); }
 
-        /* Market Update Section */
-        .market-section {
-            background: #fff; 
-            padding: 1.5rem; 
-            border-radius: 24px; 
-            margin: 20px 5%; 
-            border: 1px solid var(--gold); 
-            text-align: center; 
-            box-shadow: var(--card-shadow);
+        /* DASHBOARD GRID (Market & News) */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 25px;
+            margin: 30px 5%;
         }
 
-        /* Services Grid */
+        .dashboard-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 24px;
+            border: 1px solid var(--gold-light);
+            box-shadow: var(--shadow);
+        }
+
+        /* LIVE NEWS FEED */
+        .news-feed { text-align: left; max-height: 350px; overflow-y: auto; padding-right: 10px; }
+        .news-item { 
+            padding: 12px 0; 
+            border-bottom: 1px solid #eee; 
+            display: flex; 
+            gap: 15px; 
+            align-items: flex-start;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-icon { color: var(--gold); font-size: 1.1rem; padding-top: 4px; }
+        .news-item p { margin: 0; font-size: 0.9rem; font-weight: 600; color: #444; }
+        .news-time { font-size: 0.75rem; color: #999; text-transform: uppercase; }
+
+        /* SERVICE CARDS */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 5%; }
         .card { 
-            background: #fff; 
-            padding: 40px 20px; 
-            border-radius: 24px; 
+            background: var(--white); 
+            padding: 40px 25px; 
+            border-radius: 28px; 
             text-align: center; 
-            box-shadow: var(--card-shadow); 
-            border-top: 5px solid var(--gold); 
-            transition: 0.3s ease; 
+            box-shadow: var(--shadow); 
+            transition: 0.4s ease;
+            border-top: 6px solid var(--gold);
         }
-        .card:hover { transform: translateY(-10px); border-top-color: var(--yellow); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
         .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { color: var(--text-dark); font-size: 1.4rem; margin-bottom: 20px; }
+        .card h3 { color: var(--charcoal); margin-bottom: 15px; font-size: 1.4rem; }
         
         .serv-btn { 
             display: inline-block; 
-            padding: 12px 30px; 
-            background: var(--text-dark); 
-            color: #fff; 
+            padding: 14px 35px; 
+            background: var(--charcoal); 
+            color: var(--white); 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: bold; 
             transition: 0.3s; 
         }
-        .serv-btn:hover { background: var(--gold); color: #fff; }
+        .serv-btn:hover { background: var(--gold); transform: scale(1.05); }
 
-        /* V-BOOST Luxury Box */
+        /* V-BOOST PREMIUM BOX */
         .vboost-box { 
             background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); 
             color: var(--gold); 
-            padding: 50px 20px; 
-            border-radius: 30px; 
+            padding: 60px 20px; 
+            border-radius: 35px; 
             margin: 40px 5%; 
             text-align: center; 
             border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
         }
         #timer { 
-            font-family: 'Courier New', monospace; 
-            font-size: 3rem; 
-            font-weight: bold; 
-            color: #fff; 
-            text-shadow: 0 0 10px var(--gold);
-            margin-top: 15px;
+            font-family: 'Monaco', monospace; 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            color: var(--white); 
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+            margin: 20px 0;
         }
 
-        /* Quiz & Insights Section */
-        .white-section {
-            background: #fff; 
-            padding: 2.5rem; 
-            border-radius: 24px; 
-            margin: 20px 5%; 
-            border-left: 8px solid var(--gold); 
-            box-shadow: var(--card-shadow);
+        /* QUIZ SECTION */
+        .quiz-container { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 28px; 
+            margin: 40px 5%; 
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gold-light);
+            text-align: center;
         }
-        .quiz-container { text-align: center; border: 1px solid #eee; border-top: 5px solid var(--gold); }
         #qOptions button { 
-            display: block; width: 100%; max-width: 450px; margin: 12px auto; 
-            padding: 15px; border: 1px solid #eee; border-radius: 12px; 
-            background: #fff; cursor: pointer; font-weight: 600; transition: 0.2s; 
+            display: block; width: 100%; max-width: 500px; margin: 15px auto; 
+            padding: 18px; border: 1px solid #eee; border-radius: 15px; 
+            background: var(--gray-bg); cursor: pointer; font-weight: 600; transition: 0.2s; 
         }
         #qOptions button:hover { background: #fff8e1; border-color: var(--gold); color: var(--gold); }
 
+        /* FOOTER */
         footer { 
-            background: #fff; 
+            background: var(--white); 
             padding: 50px; 
             text-align: center; 
             border-top: 1px solid #eee; 
-            color: #888;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            #timer { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -128,98 +156,43 @@
 
 <header>
     <div class="brand"><i class="fa-solid fa-whale"></i> META <span>WHALE</span></div>
-    <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">ECOSYSTEM V1.0</div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">PREMIUM ACCESS</div>
 </header>
 
-<!-- MARKET UPDATE -->
-<style>
-    /* Dashboard Grid Layout */
-    .dashboard-container {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr; /* Market widget takes more space than the news */
-        gap: 20px;
-        margin: 20px 5%;
-    }
-
-    .dashboard-box {
-        background: #fff;
-        padding: 25px;
-        border-radius: 24px;
-        border: 1px solid var(--gold);
-        box-shadow: var(--card-shadow);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .news-feed {
-        text-align: left;
-        padding: 10px;
-    }
-
-    .news-item {
-        border-bottom: 1px solid #f0f0f0;
-        padding: 10px 0;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-    }
-
-    .news-item:last-child { border-bottom: none; }
-    .news-item i { color: var(--gold); font-size: 1.2rem; }
-    .news-tag { 
-        font-size: 0.7rem; 
-        background: var(--gold); 
-        color: #fff; 
-        padding: 2px 8px; 
-        border-radius: 10px; 
-        font-weight: bold;
-    }
-
-    /* Responsive: Stack on mobile */
-    @media (max-width: 768px) {
-        .dashboard-container { grid-template-columns: 1fr; }
-    }
-</style>
-
+<!-- DASHBOARD: MARKET & NEWS -->
 <div class="dashboard-container">
-    <!-- LEFT: MARKET UPDATE -->
+    <!-- MARKET DATA -->
     <div class="dashboard-box">
-        <h2 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 15px;">
-            <i class="fa-solid fa-chart-line" style="color: var(--gold);"></i> Live Market Pulse
-        </h2>
-        <div style="min-height: 100px;">
+        <h3 style="margin-top:0;"><i class="fa-solid fa-chart-line" style="color:var(--gold)"></i> Market Pulse</h3>
+        <div style="min-height: 120px;">
             <script src="https://coingecko.com"></script>
             <gecko-coin-ticker-widget locale="en" outlined="true" coin-id="whalebit" initial-currency="usd"></gecko-coin-ticker-widget>
         </div>
     </div>
 
-    <!-- RIGHT: WHALE ALERTS / NEWS -->
+    <!-- LIVE NEWS FEED -->
     <div class="dashboard-box">
-        <h2 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 15px;">
-            <i class="fa-solid fa-bullhorn" style="color: var(--gold);"></i> Whale Alerts
-        </h2>
+        <h3 style="margin-top:0;"><i class="fa-solid fa-rss" style="color:var(--gold)"></i> Crypto Live News</h3>
         <div class="news-feed">
             <div class="news-item">
-                <i class="fa-solid fa-whale"></i>
+                <i class="fa-solid fa-bolt news-icon"></i>
                 <div>
-                    <span class="news-tag">ALERT</span>
-                    <p style="margin: 2px 0; font-size: 0.9rem; font-weight: 600;">Large Whale movement detected in BTC</p>
+                    <span class="news-time">Just Now</span>
+                    <p>New Bitcoin whales are rewriting BTC's market structure as capital inflows surge</p>
                 </div>
             </div>
             <div class="news-item">
-                <i class="fa-solid fa-newspaper"></i>
+                <i class="fa-solid fa-newspaper news-icon"></i>
                 <div>
-                    <span class="news-tag">UPDATE</span>
-                    <p style="margin: 2px 0; font-size: 0.9rem; font-weight: 600;">Ecosystem Liquidity Pool V2 is live</p>
+                    <span class="news-time">15 Mins Ago</span>
+                    <p>Market analysts monitor legendary whale moving $222M into short positions</p>
                 </div>
             </div>
             <div class="news-item">
-                <i class="fa-solid fa-trophy"></i>
+                <i class="fa-solid fa-shield-halved news-icon"></i>
                 <div>
-                    <span class="news-tag">REWARDS</span>
-                    <p style="margin: 2px 0; font-size: 0.9rem; font-weight: 600;">Weekly staking rewards distributed</p>
+                    <span class="news-time">1 Hour Ago</span>
+                    <p>Weekly staking rewards distributed to V-BOOST ecosystem participants</p>
                 </div>
             </div>
         </div>
@@ -229,63 +202,48 @@
 <!-- SERVICE CARDS -->
 <div class="services">
     <div class="card">
-        <i class="fa-solid fa-rocket"></i>
+        <i class="fa-solid fa-gem"></i>
         <h3>DeFi Portal</h3>
-        <p>Access high-yield strategies and decentralized finance tools.</p>
-        <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="serv-btn">Launch Portal</a>
+        <p>Access high-tier yield strategies and premium decentralized tools.</p>
+        <a href="https://tactics-strategy.com" target="_blank" class="serv-btn">Open Portal</a>
     </div>
 
     <div class="card">
-        <i class="fa-solid fa-university"></i>
+        <i class="fa-solid fa-graduation-cap"></i>
         <h3>Academy</h3>
-        <p>Master the art of blockchain with exclusive training modules.</p>
+        <p>Expert-led blockchain training for the next generation of whales.</p>
         <a href="https://v-academy.top" target="_blank" class="serv-btn">Enter Academy</a>
     </div>
 
     <div class="card">
-        <i class="fa-solid fa-crown"></i>
+        <i class="fa-solid fa-users-viewfinder"></i>
         <h3>Community</h3>
-        <p>Network with top-tier crypto whales and industry experts.</p>
-        <a href="https://chat.whatsapp.com/Dmko91cY4OA93VfBfweaVf" target="_blank" class="serv-btn">Join Circle</a>
+        <p>Connect with high-net-worth investors in our private network.</p>
+        <a href="https://whatsapp.com" target="_blank" class="serv-btn">Join WhatsApp</a>
     </div>
 </div>
 
 <!-- V-BOOST COUNTDOWN -->
 <div class="vboost-box">
-    <h3 style="margin:0; letter-spacing:2px; text-transform: uppercase;">🚀 V-BOOST Launch Countdown</h3>
+    <h3 style="margin:0; letter-spacing:3px; text-transform: uppercase;">🚀 V-BOOST SYSTEM ACTIVATION</h3>
     <div id="timer">00:00:00:00</div>
-    <p style="color: #888; margin-top: 10px;">The revolution is arriving. Prepare for impact.</p>
+    <p style="color: #bbb;">The next evolution of network leverage is arriving.</p>
 </div>
 
-<!-- DAILY INSIGHT -->
-<section class="white-section">
-    <h3 style="color: var(--gold); margin-top: 0;"><i class="fa-solid fa-lightbulb"></i> Daily Whale Wisdom</h3>
-    <div id="daily-quote" style="font-size: 1.2rem; font-weight: 500; font-style: italic; margin: 15px 0;">
-        "True wealth is created by holding during the storm, not just sailing in the sun."
-    </div>
-    <div style="background: #fff8e1; padding: 20px; border-radius: 15px; border: 1px dashed var(--gold);">
-        <h4 style="color: var(--text-dark); margin: 0 0 5px 0; text-transform: uppercase; font-size: 0.9rem;">Why V-BOOST?</h4>
-        <p style="font-size: 0.95rem; color: #555; margin: 0;">
-            V-BOOST is a proprietary algorithm designed to maximize network leverage using automated smart contracts.
-        </p>
-    </div>
-</section>
-
 <!-- QUIZ SECTION -->
-<section class="quiz-container white-section">
-    <h3 style="color:var(--text-dark)">🧠 Crypto IQ Challenge</h3>
-    <p id="qText" style="font-weight:bold; font-size:1.1rem; color:#555;">What is the primary benefit of DeFi?</p>
+<section class="quiz-container">
+    <h3 style="color:var(--gold); margin-bottom:20px;">🧠 Crypto IQ Challenge</h3>
+    <p id="qText" style="font-weight:bold; font-size:1.2rem; color:var(--charcoal);">What happens during a Bitcoin Halving?</p>
     <div id="qOptions">
-        <button>Eliminating Intermediaries (Banks)</button>
-        <button>Faster Printing of Physical Cash</button>
+        <button>Mining rewards are cut by 50%</button>
+        <button>All Bitcoin prices are doubled instantly</button>
     </div>
-    <div class="score-box" style="color: var(--gold); font-weight: bold; margin-top: 15px;">Success Rate: <span id="score">0</span>%</div>
-    <button class="serv-btn" style="margin-top: 20px; background: var(--gold);">Next Challenge</button>
+    <div style="color: var(--gold); font-weight: bold; margin-top: 15px; font-size: 0.9rem;">Whale Status: <span id="score">0</span>% Knowledge</div>
 </section>
 
 <footer>
-    <div style="color: var(--text-dark); font-weight: bold; margin-bottom: 10px;">META WHALE</div>
-    GanyoData @2026 | Powered By <a href="#" style="color: var(--gold); text-decoration: none; font-weight: bold;">GanyoKripto</a>
+    <div style="color: var(--charcoal); font-weight: 900; letter-spacing: 2px; margin-bottom: 10px;">META WHALE</div>
+    GanyoData @2026 | Powered By <a href="https://github.io" style="color: var(--gold); text-decoration: none; font-weight: bold;">GanyoKripto</a>
 </footer>
 
 </body>
