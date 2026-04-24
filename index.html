@@ -63,3 +63,79 @@
             initial-currency="usd">
         </gecko-coin-ticker-widget>
     </div>
+
+    <style>
+    /* Ecosystem Styles */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 5%; }
+    .card { background: #fff; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-bottom: 4px solid var(--accent); transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { color: #333; margin: 15px 0; }
+    
+    .serv-btn { display: inline-block; padding: 12px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+    .serv-btn:hover { background: #1e7e34; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3); }
+
+    /* V-BOOST Timer Box */
+    .vboost-box { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); color: white; padding: 40px 20px; border-radius: 20px; margin: 20px 5%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    #timer { font-family: 'Courier New', monospace; font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; margin-top: 15px; color: var(--accent); }
+
+    /* Quiz Styling */
+    .quiz-container { background: #fff; padding: 2rem; border-radius: 20px; margin: 20px 5%; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 2px solid var(--accent); }
+    #qOptions button { display: block; width: 100%; max-width: 400px; margin: 10px auto; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; cursor: pointer; transition: 0.2s; }
+    #qOptions button:hover { background: #e8f5e9; border-color: var(--primary); }
+    .score-box { font-weight: bold; color: var(--primary); margin: 15px 0; }
+    .next-btn { background: #333; color: white; padding: 10px 30px; border: none; border-radius: 50px; cursor: pointer; }
+</style>
+
+<!-- 1. SERVICE CARDS -->
+<div class="services">
+    <div class="card">
+        <i class="fa fa-chart-line" style="font-size:2.5rem; color:var(--primary)"></i>
+        <h3>DeFi Portal</h3>
+        <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="serv-btn">Enter Portal</a>
+    </div>
+
+    <div class="card">
+        <i class="fa fa-graduation-cap" style="font-size:2.5rem; color:var(--primary)"></i>
+        <h3>Academy</h3>
+        <a href="https://v-academy.top" target="_blank" class="serv-btn">Login Academy</a>
+    </div>
+
+    <div class="card">
+        <i class="fa fa-users" style="font-size:2.5rem; color:var(--primary)"></i>
+        <h3>Community</h3>
+        <a href="https://chat.whatsapp.com/Dmko91cY4OA93VfBfweaVf" target="_blank" class="serv-btn">Join WhatsApp</a>
+    </div>
+</div>
+
+<!-- 2. V-BOOST COUNTDOWN -->
+<div class="vboost-box">
+    <h3 style="margin:0; letter-spacing:1px;">🚀 V-BOOST LAUNCH COUNTDOWN</h3>
+    <div id="timer">00:00:00:00</div>
+</div>
+
+<!-- 3. DAILY CRYPTO INSIGHT -->
+<section style="background: #fff; padding: 2rem 1.5rem; border-radius: 20px; margin: 20px 5%; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border-left: 6px solid var(--accent);">
+    <h3 style="color: var(--primary); margin-top: 0; font-size: 1.3rem;">🌟 Daily Crypto Insight</h3>
+    <div id="daily-quote" style="font-size: 1.1rem; font-weight: 600; color: #444; font-style: italic; margin: 15px 0; line-height: 1.4;">
+        "The best time to invest was yesterday. The second best time is now."
+    </div>
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 12px; margin-top: 10px;">
+        <h4 style="color: var(--primary); margin: 0 0 5px 0; font-size: 1rem; text-transform: uppercase;">Why V-BOOST?</h4>
+        <p id="vboost-reason" style="font-size: 0.95rem; color: #555; margin: 0; line-height: 1.5;">
+            V-BOOST leverages smart-contract technology to amplify your networking rewards.
+        </p>
+    </div>
+</section>
+
+<!-- 4. QUIZ SECTION -->
+<section class="quiz-container">
+    <h3 style="color:var(--primary)">🧠 Crypto & DeFi IQ Quiz</h3>
+    <p id="qText" style="font-weight:bold; font-size:1.1rem; color:#444;">What does 'HODL' stand for?</p>
+    <div id="qOptions">
+        <button>Hold On for Dear Life</button>
+        <button>Highly Optimized Digital Ledger</button>
+    </div>
+    <p id="qRes" style="font-weight:bold; height:20px; color:var(--primary);"></p>
+    <div class="score-box">Your Score: <span id="score">0</span></div>
+    <button class="next-btn" onclick="nextQ()">Next Question</button>
+</section>
