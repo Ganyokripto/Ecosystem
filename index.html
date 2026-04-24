@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Whale Ecosystem | Premium Crypto Portal</title>
+    <title>Meta Whale Ecosystem | Premium Portal</title>
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
@@ -15,12 +15,11 @@
             --charcoal: #121212; /* Deep Dark */
             --white: #ffffff;
             --gray-bg: #f8f9fa;
-            --shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
+            --shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
         }
 
         body { font-family: 'Inter', sans-serif; background: var(--gray-bg); color: var(--charcoal); margin: 0; line-height: 1.6; }
 
-        /* PREMIUM HEADER */
         header { 
             padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
             background: var(--white); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000;
@@ -28,37 +27,40 @@
         .brand { font-size: 1.6rem; font-weight: 900; color: var(--charcoal); display: flex; align-items: center; gap: 10px; }
         .brand span { color: var(--gold); }
 
-        /* DASHBOARD GRID */
-        .dashboard-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 25px; margin: 30px 5%; }
-        .dashboard-box { background: var(--white); padding: 25px; border-radius: 24px; border: 1px solid var(--gold-light); box-shadow: var(--shadow); }
+        /* DASHBOARD SECTION */
+        .dashboard-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin: 25px 5%; }
+        .dashboard-box { background: var(--white); padding: 25px; border-radius: 24px; border: 1px solid var(--gold-light); box-shadow: var(--shadow); text-align: center; }
 
-        /* LIVE NEWS FEED */
-        .news-feed { text-align: left; max-height: 350px; overflow-y: auto; padding-right: 10px; }
-        .news-item { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; gap: 15px; align-items: flex-start; }
-        .news-icon { color: var(--gold); font-size: 1.1rem; }
-        .news-item p { margin: 0; font-size: 0.9rem; font-weight: 600; color: #444; }
+        /* NEWS FEED */
+        .news-feed { text-align: left; padding: 10px; }
+        .news-item { border-bottom: 1px solid #f0f0f0; padding: 12px 0; display: flex; gap: 12px; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        .news-item i { color: var(--gold); }
+        .news-tag { font-size: 0.7rem; background: var(--gold); color: #fff; padding: 2px 8px; border-radius: 10px; font-weight: bold; margin-right: 5px; }
 
         /* SERVICE CARDS */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 5%; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 5%; }
         .card { 
             background: var(--white); padding: 40px 25px; border-radius: 28px; text-align: center; 
-            box-shadow: var(--shadow); transition: 0.4s ease; border-top: 6px solid var(--gold);
+            box-shadow: var(--shadow); border-top: 6px solid var(--gold); transition: 0.3s;
         }
         .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 15px; }
         
         .serv-btn { 
             display: inline-block; padding: 14px 35px; background: var(--charcoal); 
-            color: var(--white); text-decoration: none; border-radius: 50px; font-weight: bold; 
+            color: var(--white); text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px;
         }
         .serv-btn:hover { background: var(--gold); }
 
-        /* V-BOOST PREMIUM BOX */
+        /* V-BOOST BOX & TIMER */
         .vboost-box { 
             background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); color: var(--gold); 
             padding: 60px 20px; border-radius: 35px; margin: 40px 5%; text-align: center; border: 2px solid var(--gold);
         }
-        #timer { font-family: monospace; font-size: 3.5rem; font-weight: 800; color: var(--white); margin: 20px 0; }
+        #timer { font-family: 'Courier New', monospace; font-size: 3.5rem; font-weight: 800; color: #fff; margin: 20px 0; letter-spacing: 2px; }
+
+        footer { padding: 40px; text-align: center; color: #888; border-top: 1px solid #eee; background: #fff; }
 
         @media (max-width: 768px) { .dashboard-container { grid-template-columns: 1fr; } #timer { font-size: 2.2rem; } }
     </style>
@@ -67,45 +69,42 @@
 
 <header>
     <div class="brand"><i class="fa-solid fa-whale"></i> META <span>WHALE</span></div>
-    <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">PREMIUM ACCESS</div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">ECOSYSTEM V1.0</div>
 </header>
 
-<!-- DASHBOARD -->
 <div class="dashboard-container">
-    <!-- MARKET DATA (Fixed Widget) -->
+    <!-- LEFT: MARKET UPDATE -->
     <div class="dashboard-box">
-        <h3 style="margin-top:0;"><i class="fa-solid fa-chart-line" style="color:var(--gold)"></i> Market Pulse</h3>
-        <div style="min-height: 120px;">
-            <script src="https://coingecko.com"></script>
-            <!-- Corrected ID: whalebit -->
+        <h2 style="font-size: 1.3rem; margin-bottom: 15px;"><i class="fa-solid fa-chart-line" style="color:var(--gold)"></i> Market Update</h2>
+        <div style="display: flex; justify-content: center; min-height: 100px;">
+            <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
             <gecko-coin-ticker-widget locale="en" outlined="true" coin-id="whalebit" initial-currency="usd"></gecko-coin-ticker-widget>
         </div>
     </div>
 
-    <!-- LIVE NEWS FEED -->
+    <!-- RIGHT: LIVE NEWS -->
     <div class="dashboard-box">
-        <h3 style="margin-top:0;"><i class="fa-solid fa-rss" style="color:var(--gold)"></i> Crypto Live News</h3>
+        <h2 style="font-size: 1.3rem; margin-bottom: 15px;"><i class="fa-solid fa-rss" style="color:var(--gold)"></i> Crypto Live News</h2>
         <div class="news-feed">
             <div class="news-item">
-                <i class="fa-solid fa-bolt news-icon"></i>
-                <p>Whalebit (CES) showing strong activity with $1M+ 24h trading volume.</p>
+                <i class="fa-solid fa-bolt"></i>
+                <div><span class="news-tag">LIVE</span> <span style="font-size: 0.9rem; font-weight:600;">Whalebit liquidity surge detected.</span></div>
             </div>
             <div class="news-item">
-                <i class="fa-solid fa-newspaper news-icon"></i>
-                <p>New Bitcoin accumulation detected as large holders move capital into DeFi.</p>
+                <i class="fa-solid fa-newspaper"></i>
+                <div><span class="news-tag">NEWS</span> <span style="font-size: 0.9rem; font-weight:600;">Global DeFi adoption hits new yearly high.</span></div>
             </div>
             <div class="news-item">
-                <i class="fa-solid fa-shield-halved news-icon"></i>
-                <p>Ecosystem security update: Multi-sig protocols activated for V-BOOST pools.</p>
+                <i class="fa-solid fa-shield"></i>
+                <div><span class="news-tag">SECURE</span> <span style="font-size: 0.9rem; font-weight:600;">V-BOOST smart contracts verified.</span></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SERVICES -->
 <div class="services">
     <div class="card">
-        <i class="fa-solid fa-gem"></i>
+        <i class="fa-solid fa-rocket"></i>
         <h3>DeFi Portal</h3>
         <a href="https://tactics-strategy.com" target="_blank" class="serv-btn">Open Portal</a>
     </div>
@@ -115,23 +114,53 @@
         <a href="https://v-academy.top" target="_blank" class="serv-btn">Enter Academy</a>
     </div>
     <div class="card">
-        <i class="fa-solid fa-users-viewfinder"></i>
+        <i class="fa-solid fa-users"></i>
         <h3>Community</h3>
         <a href="https://whatsapp.com" target="_blank" class="serv-btn">Join WhatsApp</a>
     </div>
 </div>
 
-<!-- COUNTDOWN -->
+<!-- V-BOOST COUNTDOWN -->
 <div class="vboost-box">
-    <h3>🚀 V-BOOST SYSTEM ACTIVATION</h3>
-    <div id="timer">00:00:00:00</div>
-    <p>The next evolution of network leverage is arriving.</p>
+    <h3 style="margin:0; letter-spacing:3px;">🚀 V-BOOST SYSTEM ACTIVATION</h3>
+    <div id="timer">Loading...</div>
+    <p style="color: #bbb;">The revolution arrives in 40 days. Prepare your wallet.</p>
 </div>
 
 <footer>
-    <div style="color: var(--charcoal); font-weight: 900; letter-spacing: 2px; margin-bottom: 10px;">META WHALE</div>
-    GanyoData @2026 | Powered By <a href="https://github.io" style="color: var(--gold); text-decoration: none; font-weight: bold;">GanyoKripto</a>
+    <div style="font-weight: 900; color: #333; margin-bottom: 10px;">META WHALE</div>
+    GanyoData @2026 | Powered By <a href="#" style="color: var(--gold); text-decoration: none; font-weight: bold;">GanyoKripto</a>
 </footer>
+
+<script>
+    // 40 DAYS COUNTDOWN SCRIPT
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 40); 
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = 
+            (days < 10 ? "0" + days : days) + ":" + 
+            (hours < 10 ? "0" + hours : hours) + ":" + 
+            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+            (seconds < 10 ? "0" + seconds : seconds);
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("timer").innerHTML = "SYSTEM LIVE";
+        }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
 
 </body>
 </html>
