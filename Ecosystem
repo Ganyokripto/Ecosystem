@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Whale Ecosystem | Powered by GanyoKripto</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --card-bg: #161b22;
+            --primary: #00d4ff; /* Tech Blue */
+            --accent: #ffcc00;  /* Gold */
+            --text-main: #e6edf3;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.6; }
+        
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #30363d; background: rgba(10, 11, 16, 0.95); position: sticky; top: 0; z-index: 1000; }
+        .brand { font-size: 1.5rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .brand span { color: var(--accent); }
+
+        .hero { padding: 80px 5%; text-align: center; background: radial-gradient(circle at top, #1d212b 0%, #0a0b10 100%); }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #fff; }
+        .hero p { max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #8b949e; }
+        .badge { background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 5%; }
+        .card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 16px; padding: 25px; transition: 0.3s; position: relative; overflow: hidden; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; color: var(--accent); }
+        .card p { font-size: 0.9rem; color: #8b949e; }
+
+        .cta-box { background: linear-gradient(135deg, #00d4ff 0%, #0055ff 100%); color: #fff; margin: 40px 5%; padding: 40px; border-radius: 24px; text-align: center; }
+        .cta-btn { background: #fff; color: #0055ff; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+
+        footer { text-align: center; padding: 40px; color: #484f58; border-top: 1px solid #30363d; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand"><i class="fas fa-whale"></i> META <span>WHALE</span></div>
+    <div style="font-size: 0.8rem; font-weight: bold;">Ecosystem v1.0</div>
+</header>
+
+<section class="hero">
+    <span class="badge">Utility Token: CES</span>
+    <h1>The Future of Web3 is Here</h1>
+    <p>Meta Whale is a complete decentralized environment powered by the <strong>CES Token</strong>. Join 2 Million+ users in a borderless Metaverse where you can Play, Learn, and Earn.</p>
+</section>
+
+<div class="grid">
+    <div class="card">
+        <i class="fas fa-chart-pie"></i>
+        <h3>W-DEX</h3>
+        <p>Decentralized exchange for trading, staking, and governance. Take control of your assets.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-gamepad"></i>
+        <h3>GameFi Hub</h3>
+        <p>Access Tactics & Strategy, W-Boost, and Royaltrix. Real games with real CES rewards.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-university"></i>
+        <h3>W-Academy</h3>
+        <p>Web3 Education. Learn blockchain technology and earn NFT certificates upon completion.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-vr-cardboard"></i>
+        <h3>MetaW Metaverse</h3>
+        <p>A fully immersive digital world. Pay, play, and build your digital legacy using CES.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-rocket"></i>
+        <h3>W-Pump & MemePad</h3>
+        <p>The launchpad for the next generation of DeFi tools and community-driven tokens.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-images"></i>
+        <h3>Meta Place</h3>
+        <p>Our native NFT Marketplace. Buy and sell rare digital collectibles with CES utility.</p>
+    </div>
+</div>
+
+<section class="cta-box">
+    <h2>Ready to position yourself?</h2>
+    <p>Join the 2 million+ users already building with Meta Whale before the global market blast.</p>
+    <a href="https://wa.me" class="cta-btn">Join the Movement</a>
+</section>
+
+<footer>
+    <p>&copy; 2024 Meta Whale Ecosystem. Powered by <strong>GanyoKripto</strong></p>
+</footer>
+
+</body>
+</html>
 
