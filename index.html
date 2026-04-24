@@ -18,138 +18,49 @@
             --shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
         }
 
-        body { 
-            font-family: 'Inter', 'Segoe UI', sans-serif; 
-            background: var(--gray-bg); 
-            color: var(--charcoal); 
-            margin: 0; 
-            line-height: 1.6; 
-        }
+        body { font-family: 'Inter', sans-serif; background: var(--gray-bg); color: var(--charcoal); margin: 0; line-height: 1.6; }
 
         /* PREMIUM HEADER */
         header { 
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            background: var(--white); 
-            border-bottom: 3px solid var(--gold); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            background: var(--white); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
         .brand { font-size: 1.6rem; font-weight: 900; color: var(--charcoal); display: flex; align-items: center; gap: 10px; }
         .brand span { color: var(--gold); }
 
-        /* DASHBOARD GRID (Market & News) */
-        .dashboard-container {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 25px;
-            margin: 30px 5%;
-        }
-
-        .dashboard-box {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 24px;
-            border: 1px solid var(--gold-light);
-            box-shadow: var(--shadow);
-        }
+        /* DASHBOARD GRID */
+        .dashboard-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 25px; margin: 30px 5%; }
+        .dashboard-box { background: var(--white); padding: 25px; border-radius: 24px; border: 1px solid var(--gold-light); box-shadow: var(--shadow); }
 
         /* LIVE NEWS FEED */
         .news-feed { text-align: left; max-height: 350px; overflow-y: auto; padding-right: 10px; }
-        .news-item { 
-            padding: 12px 0; 
-            border-bottom: 1px solid #eee; 
-            display: flex; 
-            gap: 15px; 
-            align-items: flex-start;
-        }
-        .news-item:last-child { border-bottom: none; }
-        .news-icon { color: var(--gold); font-size: 1.1rem; padding-top: 4px; }
+        .news-item { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; gap: 15px; align-items: flex-start; }
+        .news-icon { color: var(--gold); font-size: 1.1rem; }
         .news-item p { margin: 0; font-size: 0.9rem; font-weight: 600; color: #444; }
-        .news-time { font-size: 0.75rem; color: #999; text-transform: uppercase; }
 
         /* SERVICE CARDS */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 5%; }
         .card { 
-            background: var(--white); 
-            padding: 40px 25px; 
-            border-radius: 28px; 
-            text-align: center; 
-            box-shadow: var(--shadow); 
-            transition: 0.4s ease;
-            border-top: 6px solid var(--gold);
+            background: var(--white); padding: 40px 25px; border-radius: 28px; text-align: center; 
+            box-shadow: var(--shadow); transition: 0.4s ease; border-top: 6px solid var(--gold);
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
+        .card:hover { transform: translateY(-10px); }
         .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { color: var(--charcoal); margin-bottom: 15px; font-size: 1.4rem; }
         
         .serv-btn { 
-            display: inline-block; 
-            padding: 14px 35px; 
-            background: var(--charcoal); 
-            color: var(--white); 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            transition: 0.3s; 
+            display: inline-block; padding: 14px 35px; background: var(--charcoal); 
+            color: var(--white); text-decoration: none; border-radius: 50px; font-weight: bold; 
         }
-        .serv-btn:hover { background: var(--gold); transform: scale(1.05); }
+        .serv-btn:hover { background: var(--gold); }
 
         /* V-BOOST PREMIUM BOX */
         .vboost-box { 
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); 
-            color: var(--gold); 
-            padding: 60px 20px; 
-            border-radius: 35px; 
-            margin: 40px 5%; 
-            text-align: center; 
-            border: 2px solid var(--gold);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); color: var(--gold); 
+            padding: 60px 20px; border-radius: 35px; margin: 40px 5%; text-align: center; border: 2px solid var(--gold);
         }
-        #timer { 
-            font-family: 'Monaco', monospace; 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            color: var(--white); 
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-            margin: 20px 0;
-        }
+        #timer { font-family: monospace; font-size: 3.5rem; font-weight: 800; color: var(--white); margin: 20px 0; }
 
-        /* QUIZ SECTION */
-        .quiz-container { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 28px; 
-            margin: 40px 5%; 
-            box-shadow: var(--shadow);
-            border: 1px solid var(--gold-light);
-            text-align: center;
-        }
-        #qOptions button { 
-            display: block; width: 100%; max-width: 500px; margin: 15px auto; 
-            padding: 18px; border: 1px solid #eee; border-radius: 15px; 
-            background: var(--gray-bg); cursor: pointer; font-weight: 600; transition: 0.2s; 
-        }
-        #qOptions button:hover { background: #fff8e1; border-color: var(--gold); color: var(--gold); }
-
-        /* FOOTER */
-        footer { 
-            background: var(--white); 
-            padding: 50px; 
-            text-align: center; 
-            border-top: 1px solid #eee; 
-            color: #777;
-        }
-
-        @media (max-width: 768px) {
-            .dashboard-container { grid-template-columns: 1fr; }
-            #timer { font-size: 2.2rem; }
-        }
+        @media (max-width: 768px) { .dashboard-container { grid-template-columns: 1fr; } #timer { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -159,13 +70,14 @@
     <div style="font-size: 0.8rem; font-weight: bold; color: var(--gold);">PREMIUM ACCESS</div>
 </header>
 
-<!-- DASHBOARD: MARKET & NEWS -->
+<!-- DASHBOARD -->
 <div class="dashboard-container">
-    <!-- MARKET DATA -->
+    <!-- MARKET DATA (Fixed Widget) -->
     <div class="dashboard-box">
         <h3 style="margin-top:0;"><i class="fa-solid fa-chart-line" style="color:var(--gold)"></i> Market Pulse</h3>
         <div style="min-height: 120px;">
             <script src="https://coingecko.com"></script>
+            <!-- Corrected ID: whalebit -->
             <gecko-coin-ticker-widget locale="en" outlined="true" coin-id="whalebit" initial-currency="usd"></gecko-coin-ticker-widget>
         </div>
     </div>
@@ -176,70 +88,45 @@
         <div class="news-feed">
             <div class="news-item">
                 <i class="fa-solid fa-bolt news-icon"></i>
-                <div>
-                    <span class="news-time">Just Now</span>
-                    <p>New Bitcoin whales are rewriting BTC's market structure as capital inflows surge</p>
-                </div>
+                <p>Whalebit (CES) showing strong activity with $1M+ 24h trading volume.</p>
             </div>
             <div class="news-item">
                 <i class="fa-solid fa-newspaper news-icon"></i>
-                <div>
-                    <span class="news-time">15 Mins Ago</span>
-                    <p>Market analysts monitor legendary whale moving $222M into short positions</p>
-                </div>
+                <p>New Bitcoin accumulation detected as large holders move capital into DeFi.</p>
             </div>
             <div class="news-item">
                 <i class="fa-solid fa-shield-halved news-icon"></i>
-                <div>
-                    <span class="news-time">1 Hour Ago</span>
-                    <p>Weekly staking rewards distributed to V-BOOST ecosystem participants</p>
-                </div>
+                <p>Ecosystem security update: Multi-sig protocols activated for V-BOOST pools.</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SERVICE CARDS -->
+<!-- SERVICES -->
 <div class="services">
     <div class="card">
         <i class="fa-solid fa-gem"></i>
         <h3>DeFi Portal</h3>
-        <p>Access high-tier yield strategies and premium decentralized tools.</p>
         <a href="https://tactics-strategy.com" target="_blank" class="serv-btn">Open Portal</a>
     </div>
-
     <div class="card">
         <i class="fa-solid fa-graduation-cap"></i>
         <h3>Academy</h3>
-        <p>Expert-led blockchain training for the next generation of whales.</p>
         <a href="https://v-academy.top" target="_blank" class="serv-btn">Enter Academy</a>
     </div>
-
     <div class="card">
         <i class="fa-solid fa-users-viewfinder"></i>
         <h3>Community</h3>
-        <p>Connect with high-net-worth investors in our private network.</p>
         <a href="https://whatsapp.com" target="_blank" class="serv-btn">Join WhatsApp</a>
     </div>
 </div>
 
-<!-- V-BOOST COUNTDOWN -->
+<!-- COUNTDOWN -->
 <div class="vboost-box">
-    <h3 style="margin:0; letter-spacing:3px; text-transform: uppercase;">🚀 V-BOOST SYSTEM ACTIVATION</h3>
+    <h3>🚀 V-BOOST SYSTEM ACTIVATION</h3>
     <div id="timer">00:00:00:00</div>
-    <p style="color: #bbb;">The next evolution of network leverage is arriving.</p>
+    <p>The next evolution of network leverage is arriving.</p>
 </div>
-
-<!-- QUIZ SECTION -->
-<section class="quiz-container">
-    <h3 style="color:var(--gold); margin-bottom:20px;">🧠 Crypto IQ Challenge</h3>
-    <p id="qText" style="font-weight:bold; font-size:1.2rem; color:var(--charcoal);">What happens during a Bitcoin Halving?</p>
-    <div id="qOptions">
-        <button>Mining rewards are cut by 50%</button>
-        <button>All Bitcoin prices are doubled instantly</button>
-    </div>
-    <div style="color: var(--gold); font-weight: bold; margin-top: 15px; font-size: 0.9rem;">Whale Status: <span id="score">0</span>% Knowledge</div>
-</section>
 
 <footer>
     <div style="color: var(--charcoal); font-weight: 900; letter-spacing: 2px; margin-bottom: 10px;">META WHALE</div>
