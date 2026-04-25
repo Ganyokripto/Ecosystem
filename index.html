@@ -77,6 +77,111 @@
         .btn-wa { background: #25D366; }
         .btn-wa:hover { background: #128C7E; }
 
+<style>
+    .economy-section {
+        background: #fff;
+        margin: 30px 5%;
+        border-radius: 35px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        border: 1px solid var(--accent);
+    }
+    .economy-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .economy-header h2 {
+        color: var(--dark);
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .economy-header .underline {
+        width: 80px;
+        height: 5px;
+        background: var(--primary);
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .token-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    .economy-card {
+        background: var(--bg-soft);
+        padding: 25px;
+        border-radius: 20px;
+        border-left: 6px solid var(--primary);
+    }
+    .economy-card h4 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--dark);
+        font-size: 1.1rem;
+    }
+    .economy-card p {
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .mechanism-box {
+        background: #fdfdfd;
+        border: 2px dashed var(--accent);
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .highlight-green { color: var(--primary); font-weight: bold; }
+</style>
+
+<section class="economy-section">
+    <div class="economy-header">
+        <h2>How V-Boost Works</h2>
+        <p>Inside the Token Economy</p>
+        <div class="underline"></div>
+    </div>
+
+    <!-- TOKENS -->
+    <div class="token-grid">
+        <div class="economy-card" style="border-color: #ff4d4d;">
+            <h4><i class="fa-solid fa-coins" style="color: #ff4d4d;"></i> IGT (Internal Currency)</h4>
+            <p>The core unit for payouts, level activations, and internal operations within the V-Boost structure.</p>
+        </div>
+        <div class="economy-card">
+            <h4><i class="fa-solid fa-chart-simple"></i> CES (Ecosystem Token)</h4>
+            <p>The main traded token. Used to purchase NFTs and convertible to IGT based on live market rates.</p>
+        </div>
+    </div>
+
+    <!-- CORE NFTs -->
+    <div class="token-grid">
+        <div class="economy-card" style="border-color: var(--accent);">
+            <h4><i class="fa-solid fa-id-card" style="color: var(--accent);"></i> Passport NFT</h4>
+            <p>Your base digital asset. Holds your position, structure participation, and directs all IGT rewards to your wallet.</p>
+        </div>
+        <div class="economy-card" style="border-color: var(--accent);">
+            <h4><i class="fa-solid fa-layer-group" style="color: var(--accent);"></i> Level NFT</h4>
+            <p>Specific NFTs used to activate multiple participation levels within the V-Boost structural growth system.</p>
+        </div>
+    </div>
+
+    <!-- MECHANICS -->
+    <div class="mechanism-box">
+        <h4 style="margin-top:0;"><i class="fa-solid fa-gears"></i> Economic Stability Mechanism</h4>
+        <p style="font-size: 0.95rem; color: #444; max-width: 800px; margin: 0 auto;">
+            Auto-upgrade and auto-reinvest are enabled by default to maintain growth. Disabling these triggers a 
+            <span class="highlight-green">25% fee</span> used for <span class="highlight-green">CES token burning</span>, 
+            ensuring long-term value and economic balance.
+        </p>
+    </div>
+</section>
+        
         /* V-BOOST TIMER */
         .vboost-box { 
             background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); color: var(--accent); 
