@@ -5,235 +5,268 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ecosystem | V-Boost Portal</title>
 
-<!-- Google Fonts -->
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Font Awesome (FIXED) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
-    --primary: #FF3B3B; /* Red Accent */
-    --secondary: #28a745; /* Optional Green Highlight */
-    --bg-dark: #0c0c0c;
-    --card-bg: #1f1f1f;
-    --shadow-red: rgba(255,59,59,0.4);
+    --primary: #D62828;
+    --accent: #FF3B3B;
+    --bg-dark: #0a0a0a;
+    --card-bg: #1a1a1a;
     --white: #ffffff;
-    --font: 'Inter', sans-serif;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    font-family: var(--font);
+    font-family: 'Inter', sans-serif;
     background: var(--bg-dark);
     color: var(--white);
-    line-height:1.6;
 }
 
-/* Fade-in animation */
-.fade-in { opacity:0; transform: translateY(20px); animation: fadeIn 1s forwards; }
-@keyframes fadeIn { to { opacity:1; transform: translateY(0); } }
+/* Animations */
+.fade-in {
+    opacity:0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    to { opacity:1; transform: translateY(0); }
+}
 
-/* Header */
+/* HEADER */
 header {
     background:#111;
     padding:15px 5%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:3px solid var(--primary);
-    box-shadow:0 4px 15px var(--shadow-red);
-    position:sticky;
-    top:0;
-    z-index:1000;
+    border-bottom:2px solid var(--primary);
 }
-header .brand { font-size:1.5rem; font-weight:800; display:flex; align-items:center; gap:10px; }
-header .powered { font-weight:600; color:var(--primary); font-size:0.95rem; }
+.brand { font-size:1.5rem; font-weight:800; }
 
-/* Sections */
-section, .services-grid, .vboost-box { margin:20px 5%; }
-h2, h3 { margin-bottom:15px; color:var(--primary); }
+/* SECTIONS */
+section { margin:30px 5%; }
 
-/* Market Section */
+/* MARKET */
 .market-section {
     background: var(--card-bg);
-    padding:2rem;
-    border-radius:25px;
-    border:2px solid var(--primary);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--primary);
     text-align:center;
-    box-shadow:0 12px 25px var(--shadow-red);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
-.market-section:hover { transform: translateY(-5px); box-shadow:0 20px 40px rgba(255,59,59,0.6); }
 
-/* News Section */
+/* NEWS */
 .news-section {
     background: var(--card-bg);
-    padding:1.8rem;
-    border-radius:25px;
-    border-left:6px solid var(--primary);
-    box-shadow:0 5px 15px var(--shadow-red);
+    padding:20px;
+    border-left:5px solid var(--primary);
+    border-radius:15px;
 }
 
-/* Services Grid */
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+/* SERVICES */
+.services {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 .card {
     background: var(--card-bg);
-    padding:40px 20px;
+    padding:30px;
     border-radius:20px;
+    border:1px solid var(--primary);
     text-align:center;
-    border:2px solid var(--primary);
-    box-shadow:0 8px 25px var(--shadow-red);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:0.3s;
 }
-.card:hover { transform: translateY(-8px); box-shadow:0 12px 35px var(--shadow-red); }
-.card i { font-size:3.5rem; margin-bottom:15px; color:var(--primary); transition: transform 0.3s; }
-.card:hover i { transform: scale(1.1); }
-.card h3 { margin-bottom:10px; font-weight:700; }
-.card p { font-size:0.95rem; color:#ccc; }
-
-/* Buttons */
-.btn, .btn-wa { display:inline-block; padding:14px 35px; background:var(--primary); color:#fff; text-decoration:none; border-radius:50px; font-weight:bold; margin-top:15px; transition:0.3s; }
-.btn:hover, .btn-wa:hover { background:#FF1F1F; transform:translateY(-3px); }
-
-/* V-Boost Timer */
-.vboost-box {
-    background:#111;
+.card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 10px 30px rgba(255,59,59,0.5);
+}
+.card i {
+    font-size:2.5rem;
     color:var(--primary);
-    padding:60px 20px;
+    margin-bottom:10px;
+}
+
+/* BUTTONS */
+.btn {
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
     border-radius:30px;
-    border:2px solid var(--primary);
-    text-align:center;
-    box-shadow:0 15px 40px var(--shadow-red);
-    transition: transform 0.3s;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
 }
-.vboost-box:hover { transform:translateY(-5px); }
-#timer { font-family:'Courier New', monospace; font-size:4rem; font-weight:800; background:linear-gradient(90deg,#FF3B3B,#FF8C42); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:pulse 1.5s infinite alternate; margin:20px 0; }
-@keyframes pulse { from { text-shadow:0 0 5px #FF3B3B; } to { text-shadow:0 0 25px #FF8C42; } }
 
-/* Newcomer Path */
-.newcomer-path h2 { text-align:center; margin-bottom:20px; }
-.newcomer-path p { text-align:center; color:#ccc; margin-bottom:40px; }
-.path-steps { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
-.step-card {
+/* TIMER */
+.timer-box {
+    text-align:center;
+    background:#111;
+    padding:50px;
+    border-radius:25px;
+    border:1px solid var(--primary);
+}
+#timer {
+    font-size:3rem;
+    font-weight:800;
+    color:var(--accent);
+}
+
+/* NEWCOMER */
+.steps {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+.step {
     background: var(--card-bg);
-    border:2px solid var(--primary);
+    padding:25px;
     border-radius:20px;
-    padding:30px 20px;
+    border:1px solid var(--primary);
+    width:200px;
     text-align:center;
-    width:220px;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
-.step-card:hover { transform:translateY(-8px); box-shadow:0 12px 35px var(--shadow-red); }
-.step-card .step-icon { font-size:3rem; color:var(--primary); margin-bottom:15px; }
 
-/* Footer */
-footer { display:flex; flex-direction:column; gap:5px; align-items:center; padding:40px 5%; border-top:1px solid #222; background:#111; text-align:center; }
-footer a { color:var(--primary); text-decoration:none; font-weight:bold; transition:color 0.3s; }
-footer a:hover { color:#FF8C42; }
+/* NFT CARDS */
+.passport-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.passport {
+    background:linear-gradient(145deg,#D62828,#a61d1d);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+.passport:hover {
+    transform:translateY(-10px);
+}
+.passport .big {
+    font-size:2.5rem;
+    font-weight:800;
+}
+.price { font-size:1.2rem; font-weight:800; }
+
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+    background:#111;
+}
 </style>
 </head>
+
 <body>
 
-<header class="fade-in">
-    <div class="brand"><i class="fas fa-network-wired"></i> Ecosystem</div>
-    <div class="powered">Powered By GanyoKripto</div>
+<header>
+    <div class="brand">Ecosystem</div>
+    <div>Powered by GanyoKripto</div>
 </header>
 
-<section class="market-section fade-in" style="animation-delay:0.2s;">
-    <h2>📈 Market Update</h2>
-    <div style="display:flex;justify-content:center;align-items:center;min-height:100px;">
-        <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
-        <gecko-coin-ticker-widget locale="en" outlined="true" coin-id="whalebit" initial-currency="usd"></gecko-coin-ticker-widget>
-    </div>
+<!-- MARKET -->
+<section class="market-section fade-in">
+<h2>📈 Market Update</h2>
+<script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
+<gecko-coin-ticker-widget coin-id="whalebit" currency="usd"></gecko-coin-ticker-widget>
 </section>
 
-<section class="news-section fade-in" style="animation-delay:0.4s;">
-    <h3><i class="fas fa-bolt"></i> Whale Live News</h3>
-    <p>• <strong>Market:</strong> Whalebit (CES) displaying bullish consolidation patterns.</p>
-    <p>• <strong>Security:</strong> All Ecosystem nodes are synchronized and secure.</p>
+<!-- NEWS -->
+<section class="news-section fade-in">
+<h3>⚡ Whale Live News</h3>
+<p>• Market bullish consolidation</p>
+<p>• Ecosystem secure and synchronized</p>
 </section>
 
-<div class="services-grid fade-in" style="animation-delay:0.6s;">
-    <div class="card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Tactics & Strategy</h3>
-        <p>Strategic crypto wealth tools.</p>
-        <a href="#" class="btn">Sign Up</a>
-    </div>
-    <div class="card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Academy</h3>
-        <p>Master the art of blockchain.</p>
-        <a href="#" class="btn">Learn Now</a>
-    </div>
-    <div class="card">
-        <i class="fab fa-whatsapp"></i>
-        <h3>Community</h3>
-        <p>Connect with the Whale circle.</p>
-        <a href="#" class="btn btn-wa">Join Group</a>
-    </div>
+<!-- SERVICES -->
+<section class="services fade-in">
+<div class="card">
+<i class="fas fa-chart-line"></i>
+<h3>Tactics</h3>
+<a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="btn">Sign Up</a>
 </div>
 
-<div class="vboost-box fade-in" style="animation-delay:0.8s;">
-    <h3>🚀 V-BOOST SYSTEM ACTIVATION</h3>
-    <div id="timer">40d 00h 00m 00s</div>
-    <p style="color:#ccc;">The next phase of wealth begins in 40 days.</p>
+<div class="card">
+<i class="fas fa-graduation-cap"></i>
+<h3>Academy</h3>
+<a href="https://v-academy.top" target="_blank" class="btn">Learn</a>
 </div>
 
-<section class="newcomer-path fade-in" style="animation-delay:1s;">
-    <h2>V-BOOST NEWCOMER PATH</h2>
-    <p>Follow these simple steps and take your first step in the V-Boost ecosystem.</p>
-    <div class="path-steps">
-        <div class="step-card"><div class="step-icon"><i class="fas fa-wallet"></i></div><h3>Step 1</h3><p>Create a wallet</p></div>
-        <div class="step-card"><div class="step-icon"><i class="fas fa-user-plus"></i></div><h3>Step 2</h3><p>Register in the system</p></div>
-        <div class="step-card"><div class="step-icon"><i class="fas fa-coins"></i></div><h3>Step 3</h3><p>Buy $CES</p></div>
-        <div class="step-card"><div class="step-icon"><i class="fas fa-rocket"></i></div><h3>Step 4</h3><p>Activate first position in V-Boost</p></div>
-    </div>
+<div class="card">
+<i class="fab fa-whatsapp"></i>
+<h3>Community</h3>
+<a href="https://chat.whatsapp.com/DpaXjazvDseKDbv3y40M3l" target="_blank" class="btn">Join</a>
+</div>
 </section>
 
-<footer class="fade-in" style="animation-delay:1.2s;">
-    <div style="font-weight:800; color:#fff; margin-bottom:10px;">ECOSYSTEM</div>
-    Ecosystem @2026 | Powered By <a href="#">GanyoKripto</a>
+<!-- TIMER -->
+<section class="timer-box fade-in">
+<h2>🚀 V-Boost Activation</h2>
+<div id="timer"></div>
+</section>
+
+<!-- NEWCOMER -->
+<section class="fade-in">
+<h2 style="text-align:center;">Newcomer Path</h2>
+<div class="steps">
+<div class="step">Wallet</div>
+<div class="step">Register</div>
+<div class="step">Buy CES</div>
+<div class="step">Activate</div>
+</div>
+</section>
+
+<!-- NFT -->
+<section class="fade-in">
+<h2 style="text-align:center;">🔥 Passport NFTs</h2>
+<div class="passport-grid">
+<div class="passport"><div class="big">B</div><p>#0921</p><p class="price">$19,500</p></div>
+<div class="passport"><div class="big">B</div><p>#1007</p><p class="price">$15,200</p></div>
+<div class="passport"><div class="big">B</div><p>#1885</p><p class="price">$15,200</p></div>
+</div>
+</section>
+
+<footer>
+Ecosystem 2026 | GanyoKripto
 </footer>
 
 <script>
-// Persistent 40-Day Timer
-const TIMER_KEY = "vboost_target_date";
-let targetDate = localStorage.getItem(TIMER_KEY);
+// TIMER FIX (NO RESET)
+const key="vboost_timer";
+let target=localStorage.getItem(key);
 
-if(!targetDate){
-    targetDate = new Date();
-    targetDate.setDate(targetDate.getDate()+40);
-    localStorage.setItem(TIMER_KEY, targetDate);
-} else {
-    targetDate = new Date(targetDate);
+if(!target){
+    target=new Date();
+    target.setDate(target.getDate()+40);
+    localStorage.setItem(key,target);
+}else{
+    target=new Date(target);
 }
 
-function updateTimer(){
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+function update(){
+    const now=new Date();
+    const d=target-now;
 
-    if(distance<0){
-        document.getElementById("timer").innerHTML="00d 00h 00m 00s";
-        return;
-    }
-
-    const days=Math.floor(distance/(1000*60*60*24));
-    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds=Math.floor((distance%(1000*60))/1000);
+    const days=Math.floor(d/86400000);
+    const hours=Math.floor((d%86400000)/3600000);
+    const mins=Math.floor((d%3600000)/60000);
+    const secs=Math.floor((d%60000)/1000);
 
     document.getElementById("timer").innerHTML=
-        (days<10?"0"+days:days)+"d "+
-        (hours<10?"0"+hours:hours)+"h "+
-        (minutes<10?"0"+minutes:minutes)+"m "+
-        (seconds<10?"0"+seconds:seconds)+"s";
+    `${days}d ${hours}h ${mins}m ${secs}s`;
 }
-
-setInterval(updateTimer,1000);
-updateTimer();
+setInterval(update,1000);
+update();
 </script>
 
 </body>
