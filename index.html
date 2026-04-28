@@ -22,9 +22,7 @@
     --font: 'Inter', sans-serif;
 }
 
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--font);
@@ -32,6 +30,17 @@ body {
     background-attachment: fixed;
     color: #333;
     line-height: 1.6;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 header {
@@ -56,9 +65,7 @@ header .brand {
     gap: 10px;
 }
 
-header .brand span {
-    color: var(--primary);
-}
+header .brand span { color: var(--primary); }
 
 header .powered {
     font-weight: 600;
@@ -66,7 +73,7 @@ header .powered {
     font-size: 0.95rem;
 }
 
-.market-section, .news-section, .services-grid, .vboost-box {
+section, .services-grid, .vboost-box {
     margin: 20px 5%;
 }
 
@@ -132,20 +139,10 @@ header .powered {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.card:hover i {
-    transform: scale(1.1);
-}
+.card:hover i { transform: scale(1.1); }
 
-.card h3 {
-    margin-bottom: 10px;
-    font-weight: 700;
-    color: #333;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #555;
-}
+.card h3 { margin-bottom: 10px; font-weight: 700; color: #333; }
+.card p { font-size: 0.95rem; color: #555; }
 
 .btn {
     display: inline-block;
@@ -159,17 +156,10 @@ header .powered {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
+.btn:hover { transform: translateY(-3px); }
 
-.btn-wa {
-    background: #25D366;
-}
-
-.btn-wa:hover {
-    background: #128C7E;
-}
+.btn-wa { background: #25D366; }
+.btn-wa:hover { background: #128C7E; }
 
 .vboost-box {
     background: rgba(30,30,30,0.95);
@@ -182,14 +172,9 @@ header .powered {
     transition: transform 0.3s ease;
 }
 
-.vboost-box:hover {
-    transform: translateY(-5px);
-}
+.vboost-box:hover { transform: translateY(-5px); }
 
-.vboost-box h3 {
-    margin: 0;
-    letter-spacing: 3px;
-}
+.vboost-box h3 { margin: 0; letter-spacing: 3px; }
 
 #timer {
     font-family: 'Courier New', monospace;
@@ -225,19 +210,17 @@ footer a {
     transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: var(--accent);
-}
+footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
 
-<header>
-    <div class="brand"><i class="fas fa-network-wired" style="color: var(--accent)"></i> Ecosystem <span></span></div>
+<header class="fade-in">
+    <div class="brand"><i class="fas fa-network-wired" style="color: var(--accent)"></i> Ecosystem</div>
     <div class="powered">Powered By GanyoKripto</div>
 </header>
 
-<section class="market-section">
+<section class="market-section fade-in" style="animation-delay: 0.2s;">
     <h2>📈 Market Update</h2>
     <div style="display: flex; justify-content: center; align-items: center; min-height: 100px;">
         <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
@@ -250,70 +233,17 @@ footer a:hover {
     </div>
 </section>
 
-<section class="news-section">
+<section class="news-section fade-in" style="animation-delay: 0.4s;">
     <h3><i class="fas fa-bolt" style="color: var(--accent)"></i> Whale Live News</h3>
     <p>• <strong>Market:</strong> Whalebit (CES) displaying bullish consolidation patterns.</p>
     <p>• <strong>Security:</strong> All Ecosystem nodes are synchronized and secure.</p>
 </section>
 
-<div class="services-grid">
+<div class="services-grid fade-in" style="animation-delay: 0.6s;">
     <div class="card">
         <i class="fas fa-chart-line" style="color: var(--accent)"></i>
         <h3>Tactics & Strategy</h3>
         <p>Strategic crypto wealth tools.</p>
-        <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank" class="btn">Sign Up</a>
+        <a href="#" target="_blank" class="btn">Sign Up</a>
     </div>
-
-    <div class="card">
-        <i class="fas fa-graduation-cap" style="color: var(--primary)"></i>
-        <h3>Academy</h3>
-        <p>Master the art of blockchain.</p>
-        <a href="https://v-academy.top" target="_blank" class="btn">Learn Now</a>
-    </div>
-
-    <div class="card">
-        <i class="fab fa-whatsapp" style="color: #25D366"></i>
-        <h3>Community</h3>
-        <p>Connect with the Whale circle.</p>
-        <a href="https://chat.whatsapp.com/DpaXjazvDseKDbv3y40M3l" target="_blank" class="btn btn-wa">Join Group</a>
-    </div>
-</div>
-
-<div class="vboost-box">
-    <h3>🚀 V-BOOST SYSTEM ACTIVATION</h3>
-    <div id="timer">40d 00h 00m 00s</div>
-    <p style="color: #ccc;">The next phase of wealth begins in 40 days.</p>
-</div>
-
-<footer>
-    <div style="font-weight: 800; color: #333; margin-bottom: 10px;">ECOSYSTEM</div>
-    Ecosystem @2026 | Powered By <a href="#">GanyoKripto</a>
-</footer>
-
-<script>
-// 40 DAY DYNAMIC TIMER
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 40); 
-
-function updateTimer() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerHTML = 
-        (days < 10 ? "0" + days : days) + "d " + 
-        (hours < 10 ? "0" + hours : hours) + "h " + 
-        (minutes < 10 ? "0" + minutes : minutes) + "m " + 
-        (seconds < 10 ? "0" + seconds : seconds) + "s";
-}
-
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
-
-</body>
-</html>
+    <div class="
