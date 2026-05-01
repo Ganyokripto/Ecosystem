@@ -6,48 +6,33 @@
     <title>GanyoData | Fast Affordable Data Services</title>
     <link rel="icon" type="image/png" href="Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
         :root { --primary: #28a745; --accent: #ffc107; --bg: #28a745; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #fff; }
         header { background: #fff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-box { display: flex; align-items: center; color: var(--primary); font-weight: bold; font-size: 1.2rem; }
         .motto { color: var(--primary); font-weight: bold; font-size: 0.9rem; }
-        
-        section { background: #fff; padding: 1.5rem; border-radius: 20px; margin: 15px 5%; color: #333; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--accent); }
-        
+        section { background: #fff; padding: 1.5rem; border-radius: 20px; margin: 15px 5%; color: #333; text-align: center; border: 2px solid var(--accent); }
         .status-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; font-size: 0.75rem; font-weight: bold; }
         .status { padding: 4px 8px; border-radius: 50px; background: #e8f5e9; color: #28a745; border: 1px solid #28a745; }
         .status.sleep { background: #fff3cd; color: #856404; border-color: #ffeeba; }
-        
         .ticker-box { background: #fffbe6; color: #856404; padding: 10px; font-size: 0.85rem; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid var(--accent); font-weight: bold; min-height: 20px; transition: all 0.5s ease; }
-
         .network-grid { display: flex; gap: 8px; justify-content: center; margin-bottom: 15px; }
-        .net-btn { padding: 10px 15px; border: 2px solid #eee; border-radius: 8px; cursor: pointer; font-weight: bold; background: #fff; flex: 1; max-width: 100px; }
+        .net-btn { padding: 10px 15px; border: 2px solid #eee; border-radius: 8px; cursor: pointer; font-weight: bold; background: #fff; flex: 1; }
         .net-btn.active { background: #e8f5e9; border-color: var(--primary); color: var(--primary); }
-        
         .package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 15px 0; }
-        .pkg-btn { padding: 10px 5px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; font-size: 0.8rem; background: #f9f9f9; transition: 0.2s; }
+        .pkg-btn { padding: 10px 5px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; font-size: 0.8rem; background: #f9f9f9; }
         .pkg-btn.active { background: var(--primary); color: white; border-color: var(--primary); font-weight: bold; }
-        
         input { padding: 12px; width: 100%; max-width: 300px; border-radius: 12px; border: 1px solid #ccc; margin-bottom: 10px; text-align: center; font-size: 1rem; box-sizing: border-box; }
         .save-box { font-size: 0.8rem; margin-bottom: 15px; color: #666; display: flex; align-items: center; justify-content: center; gap: 5px; }
-        
-        .order-btn { background: #25d366; color: white; padding: 15px; border-radius: 50px; border: none; cursor: pointer; width: 100%; max-width: 300px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
-
+        .order-btn { background: #25d366; color: white; padding: 15px; border-radius: 50px; border: none; cursor: pointer; width: 100%; max-width: 300px; font-weight: bold; font-size: 1.1rem; }
         .ussd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
-        .ussd-card { background: #f8f9fa; padding: 10px; border-radius: 10px; font-size: 0.7rem; border: 1px solid #eee; cursor: pointer; transition: 0.2s; }
-        .ussd-card:active { transform: scale(0.95); background: #e8f5e9; }
+        .ussd-card { background: #f8f9fa; padding: 10px; border-radius: 10px; font-size: 0.7rem; border: 1px solid #eee; cursor: pointer; }
         .ussd-card b { color: var(--primary); display: block; font-size: 0.9rem; }
-
-        .advisor-box { background: #f0f4f8; padding: 15px; border-radius: 15px; margin-top: 15px; text-align: left; }
-        .advisor-box select { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #ccc; margin-top: 5px; }
-
-        .explore-banner { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); padding: 40px 20px; text-align: center; border-radius: 20px; margin: 15px 5%; color: #ffffff; border: 2px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .explore-banner { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); padding: 40px 20px; text-align: center; border-radius: 20px; margin: 15px 5%; color: #ffffff; border: 2px solid var(--accent); }
         .explore-btn { display: inline-block; background: var(--accent); color: #333; padding: 12px 30px; font-weight: bold; text-decoration: none; border-radius: 50px; margin-top: 15px; }
-
         .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
-        .whatsapp-float img { width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .whatsapp-float img { width: 60px; height: 60px; border-radius: 50%; }
     </style>
 </head>
 <body>
@@ -57,10 +42,8 @@
     <div class="motto">Powered By: GanyoKripto</div>
 </header>
 
-<section id="statusSection">
-    <div class="status-bar" id="statusBar">
-        <span class="status">● System: Online</span>
-    </div>
+<section>
+    <div class="status-bar" id="statusBar"><span class="status">● System: Online</span></div>
     <h2 style="color: var(--primary); margin-top: 0;">💳 Payment</h2>
     <div style="background: #f8f9fa; padding: 15px; border-radius: 12px; border: 1px dashed #ccc; cursor: pointer;" onclick="copyNumber('0242366444')">
         <span style="display: block; font-size: 0.8rem; color: #666;">Tap to Copy Number</span>
@@ -69,35 +52,25 @@
     </div>
 </section>
 
-<section class="order-section">
-    <div class="ticker-box" id="orderTicker">🚀 Loading GanyoData Engine...</div>
+<section>
+    <div class="ticker-box" id="orderTicker">🚀 Loading GanyoData...</div>
     <h2 style="color: var(--primary); margin-top:0;">🛒 Order Data</h2>
     <div class="network-grid">
-        <div class="net-btn active" onclick="setNet('MTN', this)">MTN</div>
+        <div class="net-btn active" id="btnMTN" onclick="setNet('MTN', this)">MTN</div>
         <div class="net-btn" onclick="setNet('Telecel', this)">Telecel</div>
         <div class="net-btn" onclick="setNet('AirtelTigo', this)">AirtelTigo</div>
     </div>
     <div class="package-grid" id="pkgGrid"></div>
     <input type="number" id="orderPhone" placeholder="Recipient Number">
-    <div class="save-box">
-        <input type="checkbox" id="saveNum" style="width: 15px; margin: 0;"> Remember my number
-    </div>
+    <div class="save-box"><input type="checkbox" id="saveNum"> Remember number</div>
     <button class="order-btn" onclick="sendOrder()">Place Order Now</button>
-    
-    <div class="advisor-box">
-        <small style="font-weight: bold; color: #555;">💡 Not sure what to buy?</small>
-        <select id="usageAdvisor" onchange="adviseData()">
-            <option value="">Select your main activity...</option>
-            <option value="1">WhatsApp & Basic Chat</option>
-            <option value="3">Social Media (TikTok/IG)</option>
-            <option value="10">YouTube & Movies</option>
-        </select>
-        <div id="adviceText" style="font-size: 0.75rem; margin-top: 5px; color: var(--primary); font-weight: bold;"></div>
+    <div style="font-size: 0.85rem; color: var(--primary); margin-top: 15px; font-weight: bold;">
+        <i class="fas fa-check-circle"></i> <span id="totalOrders">0</span> Orders Processed
     </div>
 </section>
 
 <section>
-    <h3 style="color: var(--primary); margin-top:0;">📡 Quick Check (Tap to Copy)</h3>
+    <h3 style="color: var(--primary); margin-top:0;">📡 Check Balance (Tap to Copy)</h3>
     <div class="ussd-grid">
         <div class="ussd-card" onclick="copyNumber('*138#')">MTN<b>*138#</b></div>
         <div class="ussd-card" onclick="copyNumber('*126#')">Telecel<b>*126#</b></div>
@@ -125,40 +98,7 @@
         'AirtelTigo': [{v: '1GB', p: '5.5'}, {v: '2GB', p: '10'}, {v: '5GB', p: '25'}]
     };
 
-    let activeNet = 'MTN', activePkg = '', activePrice = '', orderCount = 0, tickerInterval;
-
-    function adviseData() {
-        const val = document.getElementById('usageAdvisor').value;
-        const text = document.getElementById('adviceText');
-        if(val == "1") text.innerHTML = "Recommendation: 1GB or 2GB is plenty!";
-        else if(val == "3") text.innerHTML = "Recommendation: Try 3GB or 5GB.";
-        else if(val == "10") text.innerHTML = "Recommendation: Go for 10GB for the best value.";
-        else text.innerHTML = "";
-    }
-
-    function checkTime() {
-        const hour = new Date().getHours();
-        const bar = document.getElementById('statusBar');
-        if (hour >= 0 && hour < 5) {
-            bar.innerHTML = `<span class="status sleep">● Admin Resting (Expect Delay)</span>`;
-        } else {
-            bar.innerHTML = `<span class="status">● System: Online (Fast Delivery)</span>`;
-        }
-    }
-
-    function showRandomTicker() {
-        const pre = ['024','055','020','059'][Math.floor(Math.random()*4)];
-        const num = Math.floor(100+Math.random()*899);
-        const amt = ['1GB','2GB','5GB','10GB'][Math.floor(Math.random()*4)];
-        const ticker = document.getElementById('orderTicker');
-        if(ticker) {
-            ticker.style.opacity = "0";
-            setTimeout(() => {
-                ticker.innerHTML = `🔥 Just now: ${amt} sent to ${pre}XXXX${num}`;
-                ticker.style.opacity = "1";
-            }, 500);
-        }
-    }
+    let activeNet = 'MTN', activePkg = '', activePrice = '', orderCount = 0;
 
     function setNet(net, btn) {
         activeNet = net; activePkg = '';
@@ -179,6 +119,20 @@
         });
     }
 
+    function showRandomTicker() {
+        const pre = ['024','055','020','059'][Math.floor(Math.random()*4)];
+        const num = Math.floor(100+Math.random()*899);
+        const amt = ['1GB','2GB','5GB','10GB'][Math.floor(Math.random()*4)];
+        const ticker = document.getElementById('orderTicker');
+        if(ticker) {
+            ticker.style.opacity = "0";
+            setTimeout(() => {
+                ticker.innerHTML = `🔥 Just now: ${amt} sent to ${pre}XXXX${num}`;
+                ticker.style.opacity = "1";
+            }, 500);
+        }
+    }
+
     function sendOrder() {
         const phone = document.getElementById('orderPhone').value;
         const save = document.getElementById('saveNum').checked;
@@ -187,23 +141,17 @@
         if(save) localStorage.setItem('savedGanyoPhone', phone);
         else localStorage.removeItem('savedGanyoPhone');
 
-        // --- START SMS BEACON (DO NOT TOUCH) ---
-        let formattedPhone = phone;
-        if (phone.startsWith('0')) formattedPhone = '+233' + phone.substring(1);
-        else if (!phone.startsWith('+')) formattedPhone = '+' + phone;
-        
+        // SMS BEACON (The core logic)
+        let fPhone = phone.startsWith('0') ? '+233' + phone.substring(1) : phone.startsWith('+') ? phone : '+233' + phone;
         const apiKey = 'anJCcmp0QnZuckJ0TEFjS3pLQkQ=';
-        const smsMsg = `Hello! Your order for ${activePkg} (${activeNet}) is being processed. Thanks for choosing GanyoData!`;
+        const smsMsg = `Hello! Your order for ${activePkg} is processing. Thanks!`;
         const beacon = new Image();
-        beacon.src = `http://sms.gonlinesites.com/app/sms/api?action=send-sms&api_key=${apiKey}&to=${formattedPhone}&from=GanyoDigita&sms=${encodeURIComponent(smsMsg)}&unicode=1`;
-        // --- END SMS BEACON ---
+        beacon.src = `http://sms.gonlinesites.com/app/sms/api?action=send-sms&api_key=${apiKey}&to=${fPhone}&from=GanyoDigita&sms=${encodeURIComponent(smsMsg)}&unicode=1`;
 
         orderCount++;
         localStorage.setItem('ganyoCount', orderCount);
         document.getElementById('totalOrders').innerText = orderCount.toLocaleString();
-
-        const ticker = document.getElementById('orderTicker');
-        ticker.innerHTML = `✅ Confirmed: ${activePkg} for ${phone.substring(0,3)}...`;
+        document.getElementById('orderTicker').innerHTML = `✅ Processing: ${activePkg} for ${phone.substring(0,3)}...`;
 
         setTimeout(() => {
             const waMsg = `🚀 *NEW ORDER*%0A- Network: ${activeNet}%0A- Bundle: ${activePkg}%0A- Price: GHS ${activePrice}%0A- Recipient: ${phone}`;
@@ -217,21 +165,20 @@
     }
 
     window.onload = () => {
-        // Load Saved Number
         const saved = localStorage.getItem('savedGanyoPhone');
         if(saved) {
             document.getElementById('orderPhone').value = saved;
             document.getElementById('saveNum').checked = true;
         }
-
-        // Load Counter
         let savedCount = localStorage.getItem('ganyoCount');
         orderCount = savedCount ? parseInt(savedCount) : 542;
         document.getElementById('totalOrders').innerText = orderCount.toLocaleString();
 
-        checkTime();
-        setNet('MTN', document.querySelector('.net-btn'));
-        tickerInterval = setInterval(showRandomTicker, 8000);
+        const hour = new Date().getHours();
+        if (hour >= 0 && hour < 5) document.getElementById('statusBar').innerHTML = `<span class="status sleep">● Admin Resting (Expect Delay)</span>`;
+        
+        setNet('MTN', document.getElementById('btnMTN'));
+        setInterval(showRandomTicker, 8000);
         showRandomTicker();
     };
 </script>
