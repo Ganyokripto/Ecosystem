@@ -1,354 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vistory Ecosystem</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistory | Unified Web3 Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --accent: #3a7bd5;
+            --bg: #0b0f17;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a0aec0;
+            --glass: rgba(255, 255, 255, 0.02);
+        }
 
-<style>
-:root{
-    --primary:#2c4e68;
-    --secondary:#6f8fa6;
-    --bg:#f5f7fa;
-    --card:#ffffff;
-    --text:#1a1a1a;
-    --muted:#6b7b86;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(58, 123, 213, 0.05) 0%, transparent 20%);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-body{background:var(--bg);color:var(--text);}
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
 
-/* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 5%;
-    background:#fff;
-    border-bottom:1px solid #ddd;
-}
-.brand{font-weight:800;font-size:1.3rem;}
+        .brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* SECTIONS */
-section{margin:50px 5%;}
+        /* HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            padding: 100px 8%;
+            gap: 60px;
+        }
 
-/* HERO */
-.vistory-hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
-    flex-wrap:wrap;
-}
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.hero-content{
-    flex:1;
-    min-width:280px;
-}
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
 
-.hero-content h1{
-    font-size:2.8rem;
-    font-weight:800;
-    color:var(--primary);
-}
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
 
-.hero-content p{
-    color:var(--muted);
-    margin-top:10px;
-    line-height:1.6;
-}
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.2);
+            border: 1px solid var(--border);
+        }
 
-.hero-image{
-    flex:1;
-    min-width:280px;
-}
+        /* STATS / MARKET */
+        .market-bar {
+            margin: 0 8% 50px;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+        }
 
-.hero-image img{
-    width:100%;
-    border-radius:20px;
-}
+        /* TIMER BOX */
+        .countdown-container {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(to bottom, transparent, var(--card-bg), transparent);
+        }
 
-/* MARKET + CHART */
-.market-section{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
+        #timer {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
 
-.market-box, .chart-box{
-    background:var(--card);
-    padding:20px;
-    border-radius:15px;
-    border:1px solid #dbe3ea;
-    flex:1;
-    min-width:280px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
+        /* NFT GRID */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
 
-/* TIMER */
-#timer{
-    text-align:center;
-    font-size:2.5rem;
-    color:var(--primary);
-    font-weight:800;
-    margin:30px 0;
-}
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 8%;
+        }
 
-/* NFT */
-.nfts{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
+        .nft-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.nft{
-    background:linear-gradient(145deg,#6f8fa6,#2c4e68);
-    padding:20px;
-    border-radius:20px;
-    text-align:center;
-    color:#fff;
-}
+        .nft-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+        }
 
-/* COMMUNITY */
-.community{
-    text-align:center;
-}
+        .nft-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .nft-card .price { font-size: 1.5rem; font-weight: 800; }
 
-.community h2{
-    font-size:2rem;
-    color:var(--primary);
-    margin-bottom:10px;
-}
+        /* COMMUNITY CARDS */
+        .comm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 8% 80px;
+        }
 
-.community p{
-    color:var(--muted);
-    margin-bottom:30px;
-}
+        .comm-card {
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
 
-.comm-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
+        .comm-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
 
-.comm-card{
-    background:var(--card);
-    border:1px solid #dbe3ea;
-    border-radius:20px;
-    padding:25px;
-    transition:0.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
 
-.comm-card:hover{
-    transform:translateY(-6px);
-}
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--primary);
+        }
 
-.comm-card i{
-    font-size:2rem;
-    color:var(--primary);
-    margin-bottom:10px;
-}
+        /* MEDIA */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            padding: 0 8%;
+        }
 
-.comm-card p{
-    font-size:0.9rem;
-    color:#777;
-    margin-bottom:15px;
-}
+        .media-card {
+            overflow: hidden;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background: var(--glass);
+        }
 
-.comm-card a{
-    display:inline-block;
-    padding:10px 18px;
-    background:var(--primary);
-    color:#fff;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:600;
-}
+        iframe { border: none; width: 100%; aspect-ratio: 16/9; }
 
-.comm-card a:hover{
-    background:var(--secondary);
-}
+        footer {
+            padding: 60px 8%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
 
-/* MEDIA */
-.media-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.media-card{
-    background:var(--card);
-    border:1px solid #dbe3ea;
-    border-radius:20px;
-    padding:20px;
-    text-align:center;
-}
-
-.media-card img, iframe{
-    width:100%;
-    border-radius:15px;
-    margin-bottom:15px;
-}
-
-.media-card p{
-    color:#777;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#fff;
-    margin-top:50px;
-    border-top:1px solid #ddd;
-}
-</style>
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 50px; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { margin: 0 auto 30px; }
+            #timer { font-size: 2.2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <div class="brand">Vistory Ecosystem</div>
-    <div>Unified Web3 Platform</div>
-</header>
+<nav>
+    <div class="brand">VISTORY</div>
+    <div style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">BLOCKCHAIN ECOSYSTEM</div>
+</nav>
 
-<!-- HERO -->
-<section class="vistory-hero">
-
-<div class="hero-content">
-    <h1>Vistory Starts Here</h1>
-
-    <p><strong>Welcome to Vistory</strong></p>
-
-    <p>
-        Vistory is a unified Web3 ecosystem where finance, gaming, education, 
-        and digital ownership connect into one system.
-    </p>
-
-    <p>
-        Here you will find tools to trade, learn, participate in partner programs, 
-        and manage digital assets without switching between fragmented platforms.
-    </p>
-
-    <p>
-        We will be sharing product updates, guides, and ecosystem news. 
-        Stay tuned for what is coming next!
-    </p>
-</div>
-
-<div class="hero-image">
-    <img src="YOUR_IMAGE_LINK_HERE" alt="Vistory">
-</div>
-
+<section class="hero">
+    <div class="hero-content">
+        <h1>Digital Assets<br>Evolved.</h1>
+        <p>Vistory is a unified Web3 ecosystem where finance, gaming, and education converge into a seamless digital experience.</p>
+        <a href="#community" class="btn">Explore Ecosystem</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2000" alt="Vistory Tech">
+    </div>
 </section>
 
-<!-- MARKET -->
-<section class="market-section">
-
-<div class="market-box">
-<h2>Market</h2>
-<script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
-<gecko-coin-ticker-widget coin-id="whalebit" currency="usd"></gecko-coin-ticker-widget>
+<div class="market-bar">
+    <script src="https://widgets.coingecko.com/gecko-coin-ticker-widget.js"></script>
+    <gecko-coin-ticker-widget coin-id="whalebit" currency="usd" locale="en" transparent="true"></gecko-coin-ticker-widget>
 </div>
 
+<div class="countdown-container">
+    <p style="text-decoration: uppercase; letter-spacing: 3px; color: var(--text-dim); font-size: 0.8rem; margin-bottom: 10px;">NEXT MILESTONE IN</p>
+    <div id="timer">00d 00h 00m 00s</div>
+</div>
+
+<section style="padding: 100px 0;">
+    <h2 class="section-title">Passport NFTs</h2>
+    <div class="nft-grid">
+        <div class="nft-card">
+            <h3>Alpha #0921</h3>
+            <p class="price">$19,500</p>
+        </div>
+        <div class="nft-card">
+            <h3>Elite #1007</h3>
+            <p class="price">$15,200</p>
+        </div>
+        <div class="nft-card">
+            <h3>Prime #1885</h3>
+            <p class="price">$15,200</p>
+        </div>
+    </div>
 </section>
 
-<!-- TIMER -->
-<div id="timer"></div>
-
-<!-- NFT -->
-<section>
-<h2 style="text-align:center;">Passport NFTs</h2>
-<div class="nfts">
-<div class="nft">NFT #0921<br>$19,500</div>
-<div class="nft">NFT #1007<br>$15,200</div>
-<div class="nft">NFT #1885<br>$15,200</div>
-</div>
+<section id="community">
+    <h2 class="section-title">Community Hub</h2>
+    <div class="comm-grid">
+        <div class="comm-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <p>Engage with the global community in real-time.</p>
+            <a href="https://chat.whatsapp.com/DpaXjazvDseKDbv3y40M3l" class="btn">Join Chat</a>
+        </div>
+        <div class="comm-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>V-Academy</h3>
+            <p>Master the blockchain with professional modules.</p>
+            <a href="https://v-academy.top" class="btn">Start Learning</a>
+        </div>
+        <div class="comm-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Tactics</h3>
+            <p>Advanced strategy tools for the modern trader.</p>
+            <a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" class="btn">Launch App</a>
+        </div>
+    </div>
 </section>
 
-<!-- COMMUNITY -->
-<section class="community">
-<h2>Community Hub</h2>
-<p>Access all ecosystem platforms</p>
-
-<div class="comm-grid">
-
-<div class="comm-card">
-<i class="fab fa-whatsapp"></i>
-<h3>WhatsApp</h3>
-<p>Live community chat</p>
-<a href="https://chat.whatsapp.com/DpaXjazvDseKDbv3y40M3l" target="_blank">Join</a>
-</div>
-
-<div class="comm-card">
-<i class="fas fa-graduation-cap"></i>
-<h3>V-Academy</h3>
-<p>Learn blockchain system</p>
-<a href="https://v-academy.top" target="_blank">Open</a>
-</div>
-
-<div class="comm-card">
-<i class="fas fa-chart-line"></i>
-<h3>Tactics Platform</h3>
-<p>Strategy tools & system</p>
-<a href="https://app.tactics-strategy.com/r/C7lrUMxqZF" target="_blank">Access</a>
-</div>
-
-</div>
+<section style="padding-bottom: 100px;">
+    <h2 class="section-title">Media & Updates</h2>
+    <div class="media-grid">
+        <div class="media-card">
+            <iframe src="https://www.youtube.com/embed/dPgXvbqxU0s" allowfullscreen></iframe>
+            <div style="padding: 20px;"><p>Ecosystem Deep Dive with Mr. Lado</p></div>
+        </div>
+        <div class="media-card">
+            <img src="https://images.unsplash.com/photo-1642104704074-907c0698bcd9?auto=format&fit=crop&q=80&w=1000" style="width:100%; height: 225px; object-fit: cover;">
+            <div style="padding: 20px;"><p>Latest Infrastructure Update - Q1 2026</p></div>
+        </div>
+    </div>
 </section>
 
-<!-- MEDIA -->
-<section>
-<h2 style="text-align:center;">Media</h2>
-
-<div class="media-grid">
-
-<div class="media-card">
-<img src="https://via.placeholder.com/300x180">
-<p>Caption under image</p>
-</div>
-
-<div class="media-card">
-<iframe src="https://www.youtube.com/embed/dPgXvbqxU0s" allowfullscreen></iframe>
-<p>Video from Mr Lado</p>
-</div>
-
-</div>
-</section>
-
-<footer>Vistory Ecosystem © 2026</footer>
+<footer>
+    <p>&copy; 2026 Vistory Ecosystem. All Rights Reserved.</p>
+</footer>
 
 <script>
-const key="vistory_timer";
-let target=localStorage.getItem(key);
+    const key = "vistory_timer_new";
+    let target = localStorage.getItem(key);
 
-if(!target){
-    target=new Date();
-    target.setDate(target.getDate()+40);
-    localStorage.setItem(key,target);
-}else{
-    target=new Date(target);
-}
+    if(!target){
+        target = new Date();
+        target.setDate(target.getDate() + 40);
+        localStorage.setItem(key, target);
+    } else {
+        target = new Date(target);
+    }
 
-function update(){
-    const now=new Date();
-    const d=target-now;
+    function update(){
+        const now = new Date();
+        const d = target - now;
+        if (d < 0) return;
 
-    const days=Math.floor(d/86400000);
-    const hours=Math.floor(d%86400000/3600000);
-    const mins=Math.floor(d%3600000/60000);
-    const secs=Math.floor(d%60000/1000);
+        const days = Math.floor(d / 86400000);
+        const hours = Math.floor(d % 86400000 / 3600000);
+        const mins = Math.floor(d % 3600000 / 60000);
+        const secs = Math.floor(d % 60000 / 1000);
 
-    document.getElementById("timer").innerHTML=
-    `${days}d ${hours}h ${mins}m ${secs}s`;
-}
+        document.getElementById("timer").innerHTML = 
+        `${days}d ${hours}h ${mins}m ${secs}s`;
+    }
 
-setInterval(update,1000);
-update();
+    setInterval(update, 1000);
+    update();
 </script>
 
 </body>
